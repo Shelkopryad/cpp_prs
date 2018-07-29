@@ -68,7 +68,8 @@ int fact(int n)
 
 int main() 
 {
-    Person person;
+    Person person(54843151, 45);
+    person.describe();
     string name;
     cout << "Enter your name" << endl;
     cin >> name;

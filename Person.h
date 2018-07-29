@@ -4,10 +4,14 @@
 class Person
 {
     public:
-        Person();
+        Person(int id, int age);
         ~Person();
+        void describe();
     protected:
     private:
+        const int regID;
+        int regAge;
+
 };
 
 #endif // PERSON_H
