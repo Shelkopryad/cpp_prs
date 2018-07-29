@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Person.h"
 
 using namespace std;
 
@@ -35,6 +36,8 @@ void doSomethingWithPtr()
     cout << "var\t" << var << endl;
     changeNumber(ptrvar);
     cout << "var\t" << var << endl;
+    changeNumber(&var);
+    cout << "var\t" << var << endl;
 }
 
 bool doSwitch(char haveFun) 
@@ -54,8 +57,18 @@ bool doSwitch(char haveFun)
     }
 }
 
+int fact(int n)
+{
+    if (n == 1) {
+        return 1;
+    } else {
+        return n * fact(n-1);
+    }
+}
+
 int main() 
 {
+    Person person;
     string name;
     cout << "Enter your name" << endl;
     cin >> name;
@@ -66,5 +79,6 @@ int main()
     } else {
         cout << "File not written" << endl;
     }
+    cout << fact(8) << endl;
     return 0;
 }
