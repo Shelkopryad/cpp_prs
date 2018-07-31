@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "Person.h"
+#include "Birthday.h"
 
 using namespace std;
 
@@ -66,10 +67,15 @@ int fact(int n)
     }
 }
 
-int main() 
+void createPerson()
 {
-    Person person(54843151, 45);
+    Birthday bd(1989, 10, 10);
+    Person person(54843151, bd);
     person.describe();
+}
+
+void doNumbers()
+{
     string name;
     cout << "Enter your name" << endl;
     cin >> name;
@@ -81,5 +87,11 @@ int main()
         cout << "File not written" << endl;
     }
     cout << fact(8) << endl;
+}
+
+int main() 
+{
+    createPerson();
+    
     return 0;
 }

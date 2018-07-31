@@ -1,16 +1,18 @@
 #ifndef PERSON_H
 #define PERSON_H
 
+#include "Birthday.h"
+
 class Person
 {
     public:
-        Person(int id, int age);
+        Person(int id, Birthday bd);
         ~Person();
         void describe();
     protected:
     private:
-        const int regID;
-        int regAge;
+        int id;
+        Birthday bd;
 
 };
 
