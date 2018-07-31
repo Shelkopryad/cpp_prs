@@ -1,8 +1,8 @@
 #include <iostream>
-#include "common.h"
+#include "game/runner.h"
 
 int main() 
 {
-    createPerson();
+    run();
     return 0;
 }
