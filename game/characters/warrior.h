@@ -6,13 +6,13 @@
 class Warrior : public Character
 {
 public:
-    Warrior(int health, int strange);
+    Warrior(int health, int strength);
     ~Warrior();
     void describe();
 
 private:
     int health;
-    int strange;
+    int strength;
 };
 
 #endif //CPP_PRS_WARRIOR_H

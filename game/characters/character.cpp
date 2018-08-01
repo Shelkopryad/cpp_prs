@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Character::Character(int health, int strange) : health(health), strange(strange)
+Character::Character(int health, int strength) : health(health), strength(strength)
 {
     cout << "Character constructor" << endl;
 }
@@ -14,5 +14,5 @@ Character::~Character()
 }
 
 void Character::describe() {
-    cout << "Character life " << health << ", strange" << strange << endl;
+    cout << "Character life " << health << ", strange" << strength << endl;
 }

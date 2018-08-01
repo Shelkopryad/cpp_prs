@@ -4,12 +4,12 @@
 class Character
 {
 public:
-    Character(int health, int strange);
+    Character(int health, int strength);
     ~Character();
     void describe();
 private:
     int health;
-    int strange;
+    int strength;
 };
 
 #endif //CPP_PRS_CHARACTER_H
