@@ -2,6 +2,7 @@
 #include "runner.h"
 #include "characters/character.h"
 #include "characters/warrior.h"
+#include "weapon/weapon.h"
 
 using namespace std;
 
@@ -9,8 +10,10 @@ void setCharacter(int n)
 {
     switch (n) {
         case 1: {
+            Weapon wp(12, 59);
             Warrior character(200, 40);
             character.describe();
+            character.setWeapon(wp);
             break;
         }
         case 2:

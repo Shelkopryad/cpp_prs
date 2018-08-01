@@ -1,6 +1,7 @@
 #include <iostream>
 #include "character.h"
 #include "warrior.h"
+#include "../weapon/weapon.h"
 
 using namespace std;
 
@@ -14,7 +15,12 @@ Warrior::~Warrior()
     cout << "Warrior destructor" << endl;
 }
 
+void Warrior::setWeapon(Weapon wp)
+{
+    wp.describe();
+}
+
 void Warrior::describe()
 {
-    cout << "Warrior health " << health << ", strange " << strength << endl;
+    cout << "Warrior health " << health << ", strength " << strength << endl;
 }
