@@ -10,7 +10,7 @@ public:
     ~Character();
     void describe();
     void setWeapon(Weapon wp);
-private:
+protected:
     int health;
     int strength;
 };

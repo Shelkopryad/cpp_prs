@@ -10,9 +10,9 @@ void setCharacter(int n)
 {
     switch (n) {
         case 1: {
-            Weapon wp(12, 59);
             Warrior character(200, 40);
             character.describe();
+            Weapon wp(12, 59);
             character.setWeapon(wp);
             break;
         }

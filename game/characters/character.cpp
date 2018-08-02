@@ -20,5 +20,5 @@ void Character::setWeapon(Weapon wp)
 }
 
 void Character::describe() {
-    cout << "Character life " << health << ", strength" << strength << endl;
+    cout << "Character life " << health << ", strength " << strength << endl;
 }

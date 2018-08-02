@@ -88,3 +88,30 @@ void doNumbers()
     }
     cout << fact(8) << endl;
 }
+
+void calc()
+{
+    int a, b, result;
+    char c;
+    cout << "Expression:" << endl;
+    cin >> a >> c >> b;
+
+    switch(c) {
+        case '+':
+            result = a + b;
+            break;
+        case '-':
+            result = a - b;
+            break;
+        case '*':
+            result = a * b;
+            break;
+        case '/':
+            result = a / b;
+            break;
+        default:
+            cout << "WTF!!!?";
+    }
+
+    cout << a << c << b << "=" << result << endl;
+}
