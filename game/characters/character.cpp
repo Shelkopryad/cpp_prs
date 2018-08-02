@@ -4,8 +4,10 @@
 
 using namespace std;
 
-Character::Character(int health, int strength) : health(health), strength(strength)
+Character::Character(int health, int strength)
 {
+    this->health = health;
+    this->strength = strength;
     cout << "Character constructor" << endl;
 }
 
