@@ -2,6 +2,7 @@
 #include "runner.h"
 #include "characters/character.h"
 #include "characters/warrior.h"
+#include "weapon/weapon.h"
 
 using namespace std;
 
@@ -11,6 +12,8 @@ void setCharacter(int n)
         case 1: {
             Warrior character(200, 40);
             character.describe();
+            Weapon wp(12, 59);
+            character.setWeapon(wp);
             break;
         }
         case 2:

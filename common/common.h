@@ -9,5 +9,6 @@ bool doSwitch(char haveFun);
 int fact(int n);
 void createPerson();
 void doNumbers();
+void calc();
 
 #endif // COMMON_H
