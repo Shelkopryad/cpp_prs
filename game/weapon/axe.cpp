@@ -19,4 +19,10 @@ Axe::~Axe()
 void Axe::describe()
 {
     cout << "Axe with min damage: " << minDmg << ", max damage: " << maxDmg << endl;
+    cout << "Average damage: " << get_avg() << endl;
+}
+
+int Axe::get_avg()
+{
+    return (minDmg + maxDmg) / 2;
 }

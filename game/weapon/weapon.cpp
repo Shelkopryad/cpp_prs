@@ -17,3 +17,8 @@ void Weapon::describe()
 {
     cout << "Weapon with dmg [" << minDmg << "-" << maxDmg << "]" << endl;
 }
+
+int Weapon::get_avg()
+{
+    return (minDmg + maxDmg) / 2;
+}

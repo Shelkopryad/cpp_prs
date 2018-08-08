@@ -61,7 +61,23 @@ int get_character_type()
 
 void run()
 {
-    int character_type = get_character_type();
-    Character *character = create_character(character_type);
-    delete character;
+    int first_character_type = get_character_type();
+    Character *first_character = create_character(first_character_type);
+    Weapon *w1 = new Axe(489, 567);
+    first_character->setWeapon(w1);
+    first_character->strike();
+
+    int second_character_type = get_character_type();
+    Character *second_character = create_character(second_character_type);
+    Weapon *w2 = new Staff(268, 1029);
+    second_character->setWeapon(w2);
+    second_character->strike();
+    cout << endl;
+
+    delete first_character;
+    delete w1;
+    cout << endl;
+    delete second_character;
+    delete w2;
+
 }

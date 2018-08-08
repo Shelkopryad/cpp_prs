@@ -18,4 +18,10 @@ Staff::~Staff()
 void Staff::describe()
 {
     cout << "Staff with min damage: " << minDmg << ", max damage: " << maxDmg << endl;
+    cout << "Average damage: " << get_avg() << endl;
+}
+
+int Staff::get_avg()
+{
+    return (minDmg + maxDmg) / 2;
 }

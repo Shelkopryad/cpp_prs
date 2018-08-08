@@ -20,12 +20,21 @@ Character::~Character()
 
 void Character::setWeapon(Weapon *wp)
 {
+    this->weapon = wp;
     wp->describe();
 }
 
 void Character::describe() 
 {
     cout << "Character life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
+}
+
+int Character::strike()
+{
+    int weapon_average = this->weapon->get_avg();
+    int character_avg = (this->strength + weapon_average) / 2;
+    cout << "Character average damage = " << character_avg << endl;
+    return character_avg;
 }
 
 int Character::getHealth()

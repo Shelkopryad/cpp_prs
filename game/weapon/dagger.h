@@ -9,6 +9,7 @@ public:
     Dagger(int minDmg, int maxDmg);
     ~Dagger();
     void describe();
+    int get_avg();
 private:
     int minDmg;
     int maxDmg;

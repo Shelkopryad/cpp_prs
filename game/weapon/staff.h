@@ -9,6 +9,7 @@ public:
     Staff(int minDmg, int maxDmg);
     ~Staff();
     void describe();
+    int get_avg();
 private:
     int minDmg;
     int maxDmg;

@@ -20,3 +20,11 @@ void Warrior::describe()
 {
     cout << "Warrior life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
 }
+
+int Warrior::strike()
+{
+    int weapon_average = this->weapon->get_avg();
+    int character_avg = (this->strength + weapon_average) / 2;
+    cout << "Warrior average damage = " << character_avg << endl;
+    return character_avg;
+}

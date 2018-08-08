@@ -18,4 +18,10 @@ Dagger::~Dagger()
 void Dagger::describe()
 {
     cout << "Dagger with min damage: " << minDmg << ", max damage: " << maxDmg << endl;
+    cout << "Average damage: " << get_avg() << endl;
+}
+
+int Dagger::get_avg()
+{
+    return (minDmg + maxDmg) / 2;
 }

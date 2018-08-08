@@ -10,6 +10,7 @@ public:
     Wizard(int health, int mind);
     ~Wizard();
     void describe();
+    int strike();
 
 private:
     int health;

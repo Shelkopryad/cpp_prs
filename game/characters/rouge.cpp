@@ -20,3 +20,11 @@ void Rouge::describe()
 {
     cout << "Rouge life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
 }
+
+int Rouge::strike()
+{
+    int weapon_average = this->weapon->get_avg();
+    int character_avg = (this->agility + weapon_average) / 2;
+    cout << "Rouge average damage = " << character_avg << endl;
+    return character_avg;
+}

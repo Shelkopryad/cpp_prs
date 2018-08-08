@@ -10,6 +10,7 @@ public:
     Warrior(int health, int strength);
     ~Warrior();
     void describe();
+    int strike();
 
 private:
     int health;

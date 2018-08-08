@@ -9,6 +9,7 @@ public:
     Axe(int minDmg, int maxDmg);
     ~Axe();
     void describe();
+    int get_avg();
 private:
     int minDmg;
     int maxDmg;

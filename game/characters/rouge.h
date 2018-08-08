@@ -10,6 +10,7 @@ public:
     Rouge(int health, int agility);
     ~Rouge();
     void describe();
+    int strike();
 
 private:
     int health;
