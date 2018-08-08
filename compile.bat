@@ -1,1 +1,1 @@
-g++ app.cpp game\characters\character.cpp game\characters\warrior.cpp game\characters\rouge.cpp game\characters\wizard.cpp game\weapon\weapon.cpp game\weapon\axe.cpp game\weapon\staff.cpp game\weapon\dagger.cpp  -o thegame.exe
+g++ app.cpp game\runner.cpp game\characters\character.cpp game\characters\warrior.cpp game\characters\rouge.cpp game\characters\wizard.cpp game\weapon\weapon.cpp game\weapon\axe.cpp game\weapon\staff.cpp game\weapon\dagger.cpp -o thegame.exe

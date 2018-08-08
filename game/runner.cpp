@@ -66,12 +66,23 @@ void run()
     Weapon *w1 = new Axe(489, 567);
     first_character->setWeapon(w1);
     first_character->strike();
+    cout << first_character->get_health() << endl;
+    cout << endl;
 
     int second_character_type = get_character_type();
     Character *second_character = create_character(second_character_type);
     Weapon *w2 = new Staff(268, 1029);
     second_character->setWeapon(w2);
     second_character->strike();
+    cout << second_character->get_health() << endl;
+    cout << endl;
+
+    int third_character_type = get_character_type();
+    Character *third_character = create_character(third_character_type);
+    Weapon *w3 = new Dagger(598, 635);
+    third_character->setWeapon(w3);
+    third_character->strike();
+    cout << third_character->get_health() << endl;
     cout << endl;
 
     delete first_character;
@@ -79,5 +90,8 @@ void run()
     cout << endl;
     delete second_character;
     delete w2;
+    cout << endl;
+    delete third_character;
+    delete w3;
 
 }

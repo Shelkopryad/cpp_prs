@@ -28,3 +28,13 @@ int Wizard::strike()
     cout << "Wizard average damage = " << character_avg << endl;
     return character_avg;
 }
+
+int Wizard::get_health()
+{
+    return this->health;
+}
+
+int Wizard::get_mind()
+{
+    return this->mind;
+}

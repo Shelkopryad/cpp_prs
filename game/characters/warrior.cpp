@@ -28,3 +28,13 @@ int Warrior::strike()
     cout << "Warrior average damage = " << character_avg << endl;
     return character_avg;
 }
+
+int Warrior::get_health()
+{
+    return this->health;
+}
+
+int Warrior::get_strength()
+{
+    return this->strength;
+}

@@ -11,6 +11,8 @@ public:
     ~Rouge();
     void describe();
     int strike();
+    int get_health();
+    int get_agility();
 
 private:
     int health;

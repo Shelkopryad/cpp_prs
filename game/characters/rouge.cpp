@@ -28,3 +28,12 @@ int Rouge::strike()
     cout << "Rouge average damage = " << character_avg << endl;
     return character_avg;
 }
+
+int Rouge::get_health()
+{
+    return this->health;
+}
+int Rouge::get_agility()
+{
+    return this->agility;
+}

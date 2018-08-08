@@ -10,9 +10,11 @@ public:
     virtual ~Character();
     virtual void describe();
     virtual int strike();
+    int get_health();
+    int get_strength();
+    int get_agility();
+    int get_mind();
     void setWeapon(Weapon *wp);
-    int getHealth();
-    int getStrength();
     
 protected:
     int health;

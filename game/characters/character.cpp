@@ -37,12 +37,22 @@ int Character::strike()
     return character_avg;
 }
 
-int Character::getHealth()
+int Character::get_health()
 {
-    return health;
+    return this->health;
 }
 
-int Character::getStrength()
+int Character::get_strength()
 {
-    return strength;
+    return this->strength;
+}
+
+int Character::get_agility()
+{
+    return this->agility;
+}
+
+int Character::get_mind()
+{
+    return this->mind;
 }

@@ -11,6 +11,8 @@ public:
     ~Wizard();
     void describe();
     int strike();
+    int get_health();
+    int get_mind();
 
 private:
     int health;

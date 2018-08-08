@@ -11,6 +11,8 @@ public:
     ~Warrior();
     void describe();
     int strike();
+    int get_health();
+    int get_strength();
 
 private:
     int health;
