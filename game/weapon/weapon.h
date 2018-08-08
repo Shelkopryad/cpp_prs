@@ -5,7 +5,7 @@ class Weapon
 {
 public:
     Weapon(int minDmg, int maxDmg);
-    ~Weapon();
+    virtual ~Weapon();
     virtual void describe();
 private:
     int minDmg;
