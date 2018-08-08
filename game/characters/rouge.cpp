@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Rouge::Rouge(int health, int agility) : Character(health, strength, agility, mind)
+Rouge::Rouge(int health, int agility) : Character(health, 10, agility, 10)
 {
     this->health = health;
     this->agility = agility;

@@ -10,35 +10,61 @@ using namespace std;
 
 int main() 
 {
-    Weapon *w_ch = new Weapon(10, 50);
-    Character *ch = new Character(158, 55);
-    ch->describe();
-    ch->setWeapon(*w_ch);
-    cout << ch->getHealth() << endl;
-    delete ch;
-    cout << endl << endl;
+    int health;
+    int strength;
+    int agility;
+    int mind;
+    int min;
+    int max;
+    cout << "Enter min and max for weapon" << endl;
+    cin >> min >> max;
+    Weapon *w_ch = new Weapon(min, max);
 
-
-    Warrior *war = new Warrior(15,87);
-    war->describe();
-    war->setWeapon(*w_ch);
-    cout << war->getHealth() << endl;
-    delete war;
-    cout << endl << endl;
-
-    Rouge *rog = new Rouge(100,43);
-    rog->describe();
-    rog->setWeapon(*w_ch);
-    cout << rog->getHealth() << endl;
-    delete rog;
-    cout << endl << endl;
-
-    Wizard *wiz = new Wizard(99999,99999);
-    wiz->describe();
-    wiz->setWeapon(*w_ch);
-    cout << wiz->getHealth() << endl;
-    delete wiz;
-    cout << endl << endl;
+    while (true) {
+        cout << "select character" << endl;
+        int character;
+        cin >> character;
+        switch (character) {
+            case 1: {
+                cout << "Enter health and strenth for warrior" << endl;
+                cin >> health >> strength;
+                Warrior *war = new Warrior(health, strength);
+                war->describe();
+                war->setWeapon(*w_ch);
+                cout << war->getHealth() << endl;
+                delete war;
+                cout << endl << endl;
+                break;
+            }
+                
+            case 2: {
+                cout << "Enter health and agility for rouge" << endl;
+                cin >> health >> agility;
+                Rouge *rog = new Rouge(health, agility);
+                rog->describe();
+                rog->setWeapon(*w_ch);
+                cout << rog->getHealth() << endl;
+                delete rog;
+                cout << endl << endl;
+                break;
+            }
+                
+            case 3: {
+                cout << "Enter health and mind for wizard" << endl;
+                cin >> health >> mind;
+                Wizard *wiz = new Wizard(health, mind);
+                wiz->describe();
+                wiz->setWeapon(*w_ch);
+                cout << wiz->getHealth() << endl;
+                delete wiz;
+                cout << endl << endl;
+                break;
+            }
+                
+            default:
+                cout << "Try later" << endl;
+        }
+    }
 
     return 0;
 }

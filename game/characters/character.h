@@ -6,7 +6,7 @@
 class Character
 {
 public:
-    Character(int health, int strength=10, int agility=10, int mind=10);
+    Character(int health, int strength, int agility, int mind);
     ~Character();
     void describe();
     void setWeapon(Weapon wp);

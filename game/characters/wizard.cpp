@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Wizard::Wizard(int health, int mind) : Character(health, strength, agility, mind)
+Wizard::Wizard(int health, int mind) : Character(health, 10, 10, mind)
 {
     this->health = health;
     this->mind = mind;
