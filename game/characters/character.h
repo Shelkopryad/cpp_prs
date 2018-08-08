@@ -6,13 +6,18 @@
 class Character
 {
 public:
-    Character(int health, int strength);
+    Character(int health, int strength, int agility, int mind);
     ~Character();
     void describe();
-    void setWeapon(Weapon wp);
+    void setWeapon(Weapon *wp);
+    int getHealth();
+    int getStrength();
 protected:
     int health;
     int strength;
+    int agility;
+    int mind;
+    static const int min_value = 10;
 };
 
 #endif //CPP_PRS_CHARACTER_H

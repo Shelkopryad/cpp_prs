@@ -6,7 +6,7 @@ class Weapon
 public:
     Weapon(int minDmg, int maxDmg);
     ~Weapon();
-    void describe();
+    virtual void describe();
 private:
     int minDmg;
     int maxDmg;

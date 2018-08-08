@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Warrior::Warrior(int health, int strength) : Character(health, strength)
+Warrior::Warrior(int health, int strength) : Character(health, strength, min_value, min_value)
 {
     this->health = health;
     this->strength = strength;
@@ -16,12 +16,7 @@ Warrior::~Warrior()
     cout << "Warrior destructor" << endl;
 }
 
-void Warrior::setWeapon(Weapon wp)
-{
-    wp.describe();
-}
-
 void Warrior::describe()
 {
-    cout << "Warrior health " << health << ", strength " << strength << endl;
+    cout << "Warrior life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
 }
