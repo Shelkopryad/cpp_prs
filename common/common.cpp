@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include <string>
 #include "Person.h"
 #include "Birthday.h"
@@ -114,4 +115,31 @@ void calc()
     }
 
     cout << a << c << b << "=" << result << endl;
+}
+
+void createVector()
+{
+    vector<string> names;
+    for (int i = 0; i < 5; i++) {
+        string name;
+        cin >> name;
+        names.push_back(name);
+    }
+
+    unsigned int vector_size = names.size();
+
+    for (int i = 0; i < vector_size; i++) {
+        std::cout << names[i] << std::endl; 
+    }
+}
+
+void print(double d)
+{
+    cout << d << endl;
+    system("pause");
+}
+
+template<class T> T conc(T v1, T v2)
+{
+    return v1 + v2;
 }
