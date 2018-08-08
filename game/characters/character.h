@@ -17,6 +17,7 @@ protected:
     int strength;
     int agility;
     int mind;
+    static const int min_value = 10;
 };
 
 #endif //CPP_PRS_CHARACTER_H

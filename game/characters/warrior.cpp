@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Warrior::Warrior(int health, int strength) : Character(health, strength, 10, 10)
+Warrior::Warrior(int health, int strength) : Character(health, strength, min_value, min_value)
 {
     this->health = health;
     this->strength = strength;
