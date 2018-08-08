@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "axe.h"
 
 using namespace std;
@@ -17,5 +18,5 @@ Axe::~Axe()
 
 void Axe::describe()
 {
-    cout << "Axe min damage: " << minDmg << ", max damage: " << maxDmg << endl;
+    cout << "Axe with min damage: " << minDmg << ", max damage: " << maxDmg << endl;
 }

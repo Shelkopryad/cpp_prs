@@ -18,9 +18,9 @@ Character::~Character()
     cout << "Character destructor" << endl;
 }
 
-void Character::setWeapon(Weapon wp)
+void Character::setWeapon(Weapon *wp)
 {
-    wp.describe();
+    wp->describe();
 }
 
 void Character::describe() 

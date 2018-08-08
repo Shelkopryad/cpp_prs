@@ -33,7 +33,7 @@ int main()
     cin >> strength;
     Warrior *war = new Warrior(health, strength);
     war->describe();
-    war->setWeapon(*w_axe);
+    war->setWeapon(w_axe);
     cout << endl;
 
     cout << "Enter min damage for staff: ";
@@ -50,7 +50,7 @@ int main()
     cin >> mind;
     Wizard *wiz = new Wizard(health, mind);
     wiz->describe();
-    wiz->setWeapon(*w_staff);
+    wiz->setWeapon(w_staff);
     cout << endl;
 
 

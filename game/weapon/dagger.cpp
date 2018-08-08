@@ -17,5 +17,5 @@ Dagger::~Dagger()
 
 void Dagger::describe()
 {
-    cout << "Dagger min damage: " << minDmg << ", max damage: " << maxDmg << endl;
+    cout << "Dagger with min damage: " << minDmg << ", max damage: " << maxDmg << endl;
 }

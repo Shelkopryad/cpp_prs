@@ -17,5 +17,5 @@ Staff::~Staff()
 
 void Staff::describe()
 {
-    cout << "Staff min damage: " << minDmg << ", max damage: " << maxDmg << endl;
+    cout << "Staff with min damage: " << minDmg << ", max damage: " << maxDmg << endl;
 }
