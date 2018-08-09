@@ -6,71 +6,45 @@
 #include "weapon/axe.h"
 #include "weapon/dagger.h"
 #include "weapon/staff.h"
+#include "method_helper.h"
 
 using namespace std;
 
 Character* create_character(int character_type)
 {
-    Character *character;
-    int level;
+    const int level = 15;
     switch (character_type) {
-        case 1: {
-            cout << "Enter level for warrior: ";
-            cin >> level;
-            character = new Warrior(level);
-            character->describe();
+        case 1:
+            return new Warrior(level);
             break;
-        }
-        case 2: {
-            cout << "Enter level for rouge: ";
-            cin >> level;
-            character = new Rouge(level);
-            character->describe();
+        case 2:
+            return new Rouge(level);
             break;
-        }
-        case 3: {
-            cout << "Enter level for wizard: ";
-            cin >> level;
-            character = new Wizard(level);
-            character->describe();
+        case 3:
+            return new Wizard(level);
             break;
-        }
         default:
             cout << "Game over!" << endl;
+            return NULL;
     }
-    return character;
 }
 
 Weapon* create_weapon(int weapon_type)
 {
     Weapon *weapon;
-    int min, max, agility, mind;
+    int min = 100;
+    int max = 120;
     switch (weapon_type) {
         case 1: {
-            cout << "Enter min for Axe: ";
-            cin >> min;
-            cout << "Enter max for Axe: ";
-            cin >> max;
             weapon = new Axe(min, max);
-            weapon->describe();
             break;
         }
         case 2: {
-            cout << "Enter min for Dagger: ";
-            cin >> min;
-            cout << "Enter max for Dagger: ";
-            cin >> max;
             weapon = new Dagger(min, max);
-            weapon->describe();
             break;
         }
         case 3: {
-            cout << "Enter min for Staff: ";
-            cin >> min;
-            cout << "Enter max for Staff: ";
-            cin >> max;
             weapon = new Staff(min, max);
-            weapon->describe();
             break;
         }
         default:
@@ -107,6 +81,9 @@ void run()
     
     int first_character_type = get_character_type();
     Character *first_character = create_character(first_character_type);
+    describe_character(first_character);
+    // first_character->describe();
+
     int first_weapon_type = get_weapon_type();
     Weapon *first_weapon = create_weapon(first_weapon_type);
     first_character->setWeapon(first_weapon);

@@ -19,7 +19,8 @@ Rouge::~Rouge()
 
 void Rouge::describe()
 {
-    cout << "Rouge level: " << level << ", life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
+    cout << "Welcome, Rouge!" << endl;
+    cout << "\tLevel: " << this->level << ", life: " << this->health << ", strength: " << this->strength << ", agility: " << this->agility << ", mind: " << this->mind << endl;
 }
 
 void Rouge::calculate()

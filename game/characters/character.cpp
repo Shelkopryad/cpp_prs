@@ -16,17 +16,6 @@ Character::~Character()
     cout << "Character destructor" << endl;
 }
 
-void Character::setWeapon(Weapon *wp)
-{
-    this->weapon = wp;
-    wp->describe();
-}
-
-void Character::describe() 
-{
-    cout << "Character level: " << level << ", life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
-}
-
 void Character::calculate()
 {
     this->health = level * (min_value + 10);
@@ -35,13 +24,15 @@ void Character::calculate()
     this->mind = level * min_value + 2;
 }
 
-int Character::strike()
+void Character::describe() {}
+
+void Character::setWeapon(Weapon *wp)
 {
-    int weapon_average = this->weapon->get_avg();
-    int character_avg = (this->strength + weapon_average) / 2;
-    cout << "Character average damage = " << character_avg << endl;
-    return character_avg;
+    this->weapon = wp;
+    this->weapon->describe();
 }
+
+int Character::strike() {}
 
 int Character::get_level()
 {

@@ -19,7 +19,8 @@ Wizard::~Wizard()
 
 void Wizard::describe()
 {
-    cout << "Wizard level: " << level << ", life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
+    cout << "Welcome, Wizard!" << endl;
+    cout << "\tLevel: " << this->level << ", life: " << this->health << ", strength: " << this->strength << ", agility: " << this->agility << ", mind: " << this->mind << endl;
 }
 
 void Wizard::calculate()
