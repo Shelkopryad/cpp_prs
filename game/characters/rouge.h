@@ -7,14 +7,16 @@
 class Rouge : public Character
 {
 public:
-    Rouge(int health, int agility);
+    Rouge(int level);
     ~Rouge();
     void describe();
+    void calculate();
     int strike();
     int get_health();
     int get_agility();
 
 private:
+    int level;
     int health;
     int agility;
 };

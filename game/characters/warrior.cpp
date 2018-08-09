@@ -5,10 +5,10 @@
 
 using namespace std;
 
-Warrior::Warrior(int health, int strength) : Character(health, strength, min_value, min_value)
+Warrior::Warrior(int level) : Character(level)
 {
-    this->health = health;
-    this->strength = strength;
+    this->level = level;
+    calculate();
     cout << "Warrior constructor" << endl;
 }
 
@@ -19,8 +19,14 @@ Warrior::~Warrior()
 
 void Warrior::describe()
 {
-    cout << "Warrior life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
+    cout << "Warrior level: " << level << ", life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
 }
+
+void Warrior::calculate()
+{
+    this->health = level * (min_value + 25);
+    this->strength = level * (min_value + 4);
+} 
 
 int Warrior::strike()
 {

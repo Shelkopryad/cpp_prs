@@ -7,14 +7,16 @@
 class Wizard : public Character
 {
 public:
-    Wizard(int health, int mind);
+    Wizard(int level);
     ~Wizard();
     void describe();
+    void calculate();
     int strike();
     int get_health();
     int get_mind();
 
 private:
+    int level;
     int health;
     int mind;
 };

@@ -5,10 +5,10 @@
 
 using namespace std;
 
-Wizard::Wizard(int health, int mind) : Character(health, min_value, min_value, mind)
+Wizard::Wizard(int level) : Character(level)
 {
-    this->health = health;
-    this->mind = mind;
+    this->level = level;
+    calculate();
     cout << "Wizard constructor" << endl;
 }
 
@@ -19,13 +19,19 @@ Wizard::~Wizard()
 
 void Wizard::describe()
 {
-    cout << "Wizard life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
+    cout << "Wizard level: " << level << ", life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
+}
+
+void Wizard::calculate()
+{
+    this->health = this->level * (min_value + 23);
+    this->mind = this->level * (min_value + 8);
 }
 
 int Wizard::strike()
 {
-    int min = this->strength;
-    int max = this->strength + this->weapon->get_avg();
+    int min = this->mind;
+    int max = this->mind + this->weapon->get_avg();
     int damage = get_random_number(min, max);
     cout << "Wizard damage = " << damage << endl;
     return damage;

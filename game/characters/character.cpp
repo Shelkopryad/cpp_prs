@@ -4,12 +4,10 @@
 
 using namespace std;
 
-Character::Character(int health, int strength, int agility, int mind)
+Character::Character(int level)
 {
-    this->health = health;
-    this->strength = strength;
-    this->agility = agility;
-    this->mind = mind;
+    this->level = level;
+    calculate();
     cout << "Character constructor" << endl;
 }
 
@@ -26,7 +24,15 @@ void Character::setWeapon(Weapon *wp)
 
 void Character::describe() 
 {
-    cout << "Character life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
+    cout << "Character level: " << level << ", life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
+}
+
+void Character::calculate()
+{
+    this->health = level * (min_value + 10);
+    this->strength = level * min_value + 2;
+    this->agility = level * min_value + 2;
+    this->mind = level * min_value + 2;
 }
 
 int Character::strike()
@@ -35,6 +41,11 @@ int Character::strike()
     int character_avg = (this->strength + weapon_average) / 2;
     cout << "Character average damage = " << character_avg << endl;
     return character_avg;
+}
+
+int Character::get_level()
+{
+    return this->level;
 }
 
 int Character::get_health()

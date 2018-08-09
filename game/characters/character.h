@@ -6,10 +6,12 @@
 class Character
 {
 public:
-    Character(int health, int strength, int agility, int mind);
+    Character(int level);
     virtual ~Character();
     virtual void describe();
     virtual int strike();
+    virtual void calculate();
+    int get_level();
     int get_health();
     int get_strength();
     int get_agility();
@@ -17,12 +19,13 @@ public:
     void setWeapon(Weapon *wp);
     
 protected:
+    int level;
     int health;
     int strength;
     int agility;
     int mind;
     Weapon *weapon;
-    static const int min_value = 10;
+    static const int min_value = 3;
 };
 
 #endif //CPP_PRS_CHARACTER_H

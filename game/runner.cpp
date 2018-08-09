@@ -12,32 +12,26 @@ using namespace std;
 Character* create_character(int character_type)
 {
     Character *character;
-    int health, strength, agility, mind;
+    int level;
     switch (character_type) {
         case 1: {
-            cout << "Enter health for warrior: ";
-            cin >> health;
-            cout << "Enter strength for warrior: ";
-            cin >> strength;
-            character = new Warrior(health, strength);
+            cout << "Enter level for warrior: ";
+            cin >> level;
+            character = new Warrior(level);
             character->describe();
             break;
         }
         case 2: {
-            cout << "Enter health for rouge: ";
-            cin >> health;
-            cout << "Enter agility for rouge: ";
-            cin >> agility;
-            character = new Rouge(health, agility);
+            cout << "Enter level for rouge: ";
+            cin >> level;
+            character = new Rouge(level);
             character->describe();
             break;
         }
         case 3: {
-            cout << "Enter health for wizard: ";
-            cin >> health;
-            cout << "Enter mind for wizard: ";
-            cin >> mind;
-            character = new Wizard(health, mind);
+            cout << "Enter level for wizard: ";
+            cin >> level;
+            character = new Wizard(level);
             character->describe();
             break;
         }
@@ -110,6 +104,7 @@ int get_weapon_type()
 
 void run()
 {
+    
     int first_character_type = get_character_type();
     Character *first_character = create_character(first_character_type);
     int first_weapon_type = get_weapon_type();

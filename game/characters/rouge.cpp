@@ -5,10 +5,10 @@
 
 using namespace std;
 
-Rouge::Rouge(int health, int agility) : Character(health, min_value, agility, min_value)
+Rouge::Rouge(int level) : Character(level)
 {
-    this->health = health;
-    this->agility = agility;
+    this->level = level;
+    calculate();
     cout << "Rouge constructor" << endl;
 }
 
@@ -19,13 +19,19 @@ Rouge::~Rouge()
 
 void Rouge::describe()
 {
-    cout << "Rouge life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
+    cout << "Rouge level: " << level << ", life: " << health << ", strength: " << strength << ", agility: " << agility << ", mind: " << mind << endl;
+}
+
+void Rouge::calculate()
+{
+    this->health = this->level * (min_value + 22);
+    this->agility = this->level * (min_value + 6);
 }
 
 int Rouge::strike()
 {
-    int min = this->strength;
-    int max = this->strength + this->weapon->get_avg();
+    int min = this->agility;
+    int max = this->agility + this->weapon->get_avg();
     int damage = get_random_number(min, max);
     cout << "Rouge damage = " << damage << endl;
     return damage;

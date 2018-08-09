@@ -7,14 +7,17 @@
 class Warrior : public Character
 {
 public:
-    Warrior(int health, int strength);
+    Warrior(int level);
     ~Warrior();
     void describe();
+    void calculate();
     int strike();
+    int get_level();
     int get_health();
     int get_strength();
 
 private:
+    int level;
     int health;
     int strength;
 };
