@@ -1,6 +1,7 @@
 #include <iostream>
 #include "wizard.h"
 #include "../weapon/weapon.h"
+#include "../method_helper.h"
 
 using namespace std;
 
@@ -23,10 +24,11 @@ void Wizard::describe()
 
 int Wizard::strike()
 {
-    int weapon_average = this->weapon->get_avg();
-    int character_avg = (this->mind + weapon_average) / 2;
-    cout << "Wizard average damage = " << character_avg << endl;
-    return character_avg;
+    int min = this->strength;
+    int max = this->strength + this->weapon->get_avg();
+    int damage = get_random_number(min, max);
+    cout << "Wizard damage = " << damage << endl;
+    return damage;
 }
 
 int Wizard::get_health()

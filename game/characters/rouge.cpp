@@ -1,6 +1,7 @@
 #include <iostream>
 #include "rouge.h"
 #include "../weapon/weapon.h"
+#include "../method_helper.h"
 
 using namespace std;
 
@@ -23,10 +24,11 @@ void Rouge::describe()
 
 int Rouge::strike()
 {
-    int weapon_average = this->weapon->get_avg();
-    int character_avg = (this->agility + weapon_average) / 2;
-    cout << "Rouge average damage = " << character_avg << endl;
-    return character_avg;
+    int min = this->strength;
+    int max = this->strength + this->weapon->get_avg();
+    int damage = get_random_number(min, max);
+    cout << "Rouge damage = " << damage << endl;
+    return damage;
 }
 
 int Rouge::get_health()

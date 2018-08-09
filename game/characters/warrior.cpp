@@ -1,6 +1,7 @@
 #include <iostream>
 #include "warrior.h"
 #include "../weapon/weapon.h"
+#include "../method_helper.h"
 
 using namespace std;
 
@@ -23,10 +24,11 @@ void Warrior::describe()
 
 int Warrior::strike()
 {
-    int weapon_average = this->weapon->get_avg();
-    int character_avg = (this->strength + weapon_average) / 2;
-    cout << "Warrior average damage = " << character_avg << endl;
-    return character_avg;
+    int min = this->strength;
+    int max = this->strength + this->weapon->get_avg();
+    int damage = get_random_number(min, max);
+    cout << "Warrior damage = " << damage << endl;
+    return damage;
 }
 
 int Warrior::get_health()
