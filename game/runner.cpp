@@ -6,13 +6,14 @@
 #include "weapon/axe.h"
 #include "weapon/dagger.h"
 #include "weapon/staff.h"
-#include "method_helper.h"
 
 using namespace std;
 
 Character* create_character(int character_type)
 {
-    const int level = 15;
+    int level;
+    cout << "Which level?" << endl;
+    cin >> level;
     switch (character_type) {
         case 1:
             return new Warrior(level);
@@ -31,26 +32,24 @@ Character* create_character(int character_type)
 
 Weapon* create_weapon(int weapon_type)
 {
-    Weapon *weapon;
-    int min = 100;
-    int max = 120;
+    int min = 123;
+    int max = 159;
     switch (weapon_type) {
         case 1: {
-            weapon = new Axe(min, max);
+            return new Axe(min, max);
             break;
         }
         case 2: {
-            weapon = new Dagger(min, max);
+            return new Dagger(min, max);
             break;
         }
         case 3: {
-            weapon = new Staff(min, max);
+            return new Staff(min, max);
             break;
         }
         default:
-            cout << "Game over!" << endl;
+            return NULL;
     }
-    return weapon;
 }
 
 int get_character_type()
@@ -81,8 +80,7 @@ void run()
     
     int first_character_type = get_character_type();
     Character *first_character = create_character(first_character_type);
-    describe_character(first_character);
-    // first_character->describe();
+    first_character->describe();
 
     int first_weapon_type = get_weapon_type();
     Weapon *first_weapon = create_weapon(first_weapon_type);
