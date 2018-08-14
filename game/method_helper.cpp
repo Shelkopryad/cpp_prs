@@ -16,7 +16,7 @@ int get_random_number(int min, int max)
 
 vector<string> getData()
 {
-    char buff[255];
+    string buff;
     vector<string> data;
     int index;
     ifstream fin;
@@ -24,9 +24,11 @@ vector<string> getData()
     
     while(!fin.eof())
     {
-        fin >> buff;
+        getline(fin, buff);
+        // fin >> buff;
+        cout << buff << endl;
 
-        for (int i = 1; i < sizeof(buff); i++)
+        for (int i = 1; i < buff.length(); i++)
         {
             if (buff[i] == 93)
             {

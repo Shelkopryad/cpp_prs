@@ -8,11 +8,6 @@
 
 using namespace std;
 
-// char[] split(char[] ch)
-// {
-
-// }
-
 struct Student
 {
     string name;
