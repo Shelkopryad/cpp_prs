@@ -12,7 +12,7 @@ public:
     Dagger(string name, int minDmg, int maxDmg);
     ~Dagger();
     void describe();
-    int get_avg();
+    int getAvg();
 private:
     string name;
     int minDmg;

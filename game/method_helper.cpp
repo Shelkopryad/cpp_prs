@@ -8,7 +8,7 @@
 #include "method_helper.h"
 
 
-int get_random_number(int min, int max)
+int getRandomNumber(int min, int max)
 {
     srand(time(0));
     return min + rand() % (max-min+1);
@@ -35,37 +35,37 @@ vector<string> getData(const string filePath)
             index = i;
         }
 
-        char tmp_buff[index];
+        char tmpBuff[index];
 
         for(int i = 0; i < index; i++)
         {
-            tmp_buff[i] = buff[i+1];
+            tmpBuff[i] = buff[i+1];
         }
 
-        tmp_buff[index] = 0;
-        data.push_back(static_cast<string>(tmp_buff));
+        tmpBuff[index] = 0;
+        data.push_back(static_cast<string>(tmpBuff));
     }
     
     fin.close();
     return data;
 }
 
-vector<string> split_string(string data, const char *separator)
+vector<string> splitString(string data, const char *separator)
 {
     vector<string> result;
     while (true)
     {
-        int sep_index = data.find(separator);
+        int sepIndex = data.find(separator);
         if (data.find(separator) != string::npos)
         {
-            result.push_back(data.substr(0, sep_index));
+            result.push_back(data.substr(0, sepIndex));
         }
         else
         {
-            result.push_back(data.substr(sep_index+1));
+            result.push_back(data.substr(sepIndex+1));
             break;
         }
-        data = data.substr(sep_index+1);
+        data = data.substr(sepIndex+1);
     }
     return result;
 }

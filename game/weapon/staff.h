@@ -12,7 +12,7 @@ public:
     Staff(string name, int minDmg, int maxDmg);
     ~Staff();
     void describe();
-    int get_avg();
+    int getAvg();
 private:
     string name;
     int minDmg;

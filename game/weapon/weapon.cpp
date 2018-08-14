@@ -9,10 +9,10 @@ Weapon::~Weapon() {}
 
 void Weapon::describe()
 {
-    cout << "Weapon: " << name << " with dmg [" << minDmg << "-" << maxDmg << "]" << endl;
+    cout << name << " with dmg [" << minDmg << "-" << maxDmg << "]" << endl;
 }
 
-int Weapon::get_avg()
+int Weapon::getAvg()
 {
     return (minDmg + maxDmg) / 2;
 }

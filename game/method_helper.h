@@ -6,9 +6,9 @@
 
 using namespace std;
 
-int get_random_number(int min, int max);
+int getRandomNumber(int min, int max);
 vector<string> getData(const string filePath);
-vector<string> split_string(string data, const char *separator);
+vector<string> splitString(string data, const char *separator);
 
 
 #endif // METHOD_HELPER_H

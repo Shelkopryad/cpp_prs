@@ -14,10 +14,10 @@ Character::~Character() {}
 
 void Character::calculate()
 {
-    this->health = level * (min_value + 10);
-    this->strength = level * min_value + 2;
-    this->agility = level * min_value + 2;
-    this->mind = level * min_value + 2;
+    this->health = level * (minValue + 10);
+    this->strength = level * minValue + 2;
+    this->agility = level * minValue + 2;
+    this->mind = level * minValue + 2;
 }
 
 void Character::describe() {}
@@ -30,27 +30,27 @@ void Character::setWeapon(Weapon *wp)
 
 int Character::strike() {}
 
-int Character::get_level()
+int Character::getLevel()
 {
     return this->level;
 }
 
-int Character::get_health()
+int Character::getHealth()
 {
     return this->health;
 }
 
-int Character::get_strength()
+int Character::getStrength()
 {
     return this->strength;
 }
 
-int Character::get_agility()
+int Character::getAgility()
 {
     return this->agility;
 }
 
-int Character::get_mind()
+int Character::getMind()
 {
     return this->mind;
 }

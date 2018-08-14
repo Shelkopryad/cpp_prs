@@ -12,7 +12,7 @@ public:
     Axe(string name, int minDmg, int maxDmg);
     ~Axe();
     void describe();
-    int get_avg();
+    int getAvg();
 private:
     string name;
     int minDmg;

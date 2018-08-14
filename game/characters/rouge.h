@@ -12,8 +12,8 @@ public:
     void describe();
     void calculate();
     int strike();
-    int get_health();
-    int get_agility();
+    int getHealth();
+    int getAgility();
 
 private:
     int level;

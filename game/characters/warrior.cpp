@@ -21,25 +21,25 @@ void Warrior::describe()
 
 void Warrior::calculate()
 {
-    this->health = level * (min_value + 25);
-    this->strength = level * (min_value + 4);
+    this->health = level * (minValue + 25);
+    this->strength = level * (minValue + 4);
 } 
 
 int Warrior::strike()
 {
     int min = this->strength;
-    int max = this->strength + this->weapon->get_avg();
-    int damage = get_random_number(min, max);
+    int max = this->strength + this->weapon->getAvg();
+    int damage = getRandomNumber(min, max);
     cout << "Warrior damage = " << damage << endl;
     return damage;
 }
 
-int Warrior::get_health()
+int Warrior::getHealth()
 {
     return this->health;
 }
 
-int Warrior::get_strength()
+int Warrior::getStrength()
 {
     return this->strength;
 }

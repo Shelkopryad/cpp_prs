@@ -12,9 +12,9 @@ public:
     void describe();
     void calculate();
     int strike();
-    int get_level();
-    int get_health();
-    int get_strength();
+    int getLevel();
+    int getHealth();
+    int getStrength();
 
 private:
     int level;

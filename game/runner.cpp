@@ -10,9 +10,9 @@
 
 using namespace std;
 
-Character* create_character(int character_type, int level)
+Character* createCharacter(int characterType, int level)
 {
-    switch (character_type) {
+    switch (characterType) {
         case 1:
             return new Warrior(level);
             break;
@@ -28,23 +28,23 @@ Character* create_character(int character_type, int level)
     }
 }
 
-Weapon* create_weapon(int weapon_type, int level)
+Weapon* createWeapon(int weaponType, int level)
 {
     vector<string> data;
-    switch (weapon_type) {
+    switch (weaponType) {
         case 1: {
             data = getData("./game/resources/axes.txt");
-            return create_axe(data, level);
+            return createAxe(data, level);
             break;
         }
         case 2: {
             data = getData("./game/resources/daggers.txt");
-            return create_dagger(data, level);
+            return createDagger(data, level);
             break;
         }
         case 3: {
             data = getData("./game/resources/staff.txt");
-            return create_staff(data, level);
+            return createStaff(data, level);
             break;
         }
         default:
@@ -52,46 +52,46 @@ Weapon* create_weapon(int weapon_type, int level)
     }
 }
 
-Weapon* create_axe(vector<string> data, int level)
+Weapon* createAxe(vector<string> data, int level)
 {
     for (int i = 0; i < sizeof(data); i++)
     {
-        vector<string> axe_data = split_string(data[i], ",");
-        if (stoi(axe_data[1]) == level)
+        vector<string> axeData = splitString(data[i], ",");
+        if (stoi(axeData[1]) == level)
         {
-            return new Axe(axe_data[0], stoi(axe_data[2]), stoi(axe_data[3]));
+            return new Axe(axeData[0], stoi(axeData[2]), stoi(axeData[3]));
         }
     }
     return NULL;
 }
 
-Weapon* create_dagger(vector<string> data, int level)
+Weapon* createDagger(vector<string> data, int level)
 {
     for (int i = 0; i < sizeof(data); i++)
     {
-        vector<string> dagger_data = split_string(data[i], ",");
-        if (stoi(dagger_data[1]) == level)
+        vector<string> daggerData = splitString(data[i], ",");
+        if (stoi(daggerData[1]) == level)
         {
-            return new Dagger(dagger_data[0], stoi(dagger_data[2]), stoi(dagger_data[3]));
+            return new Dagger(daggerData[0], stoi(daggerData[2]), stoi(daggerData[3]));
         }
     }
     return NULL;
 }
 
-Weapon* create_staff(vector<string> data, int level)
+Weapon* createStaff(vector<string> data, int level)
 {
     for (int i = 0; i < sizeof(data); i++)
     {
-        vector<string> staff_data = split_string(data[i], ",");
-        if (stoi(staff_data[1]) == level)
+        vector<string> staffData = splitString(data[i], ",");
+        if (stoi(staffData[1]) == level)
         {
-            return new Staff(staff_data[0], stoi(staff_data[2]), stoi(staff_data[3]));
+            return new Staff(staffData[0], stoi(staffData[2]), stoi(staffData[3]));
         }
     }
     return NULL;
 }
 
-int get_character_type()
+int getCharacterType()
 {
     cout << "Welcome ot the game!" << endl;
     cout << "Select character" << endl;
@@ -103,7 +103,7 @@ int get_character_type()
     return n;
 }
 
-int get_weapon_type()
+int getWeaponType()
 {
     cout << "Select weapon" << endl;
     cout << "\t1 - Axe" << endl;
@@ -116,20 +116,20 @@ int get_weapon_type()
 
 void run()
 {
-    int first_character_type = get_character_type();
+    int characterType = getCharacterType();
     int level;
     cout << "Which level?" << endl;
     cin >> level;
     cout << endl;
-    Character *first_character = create_character(first_character_type, level);
-    first_character->describe();
+    Character *character = createCharacter(characterType, level);
+    character->describe();
 
-    int first_weapon_type = get_weapon_type();
-    Weapon *first_weapon = create_weapon(first_weapon_type, level);
-    first_character->setWeapon(first_weapon);
-    first_character->strike();
+    int weaponType = getWeaponType();
+    Weapon *weapon = createWeapon(weaponType, level);
+    character->setWeapon(weapon);
+    character->strike();
     cout << endl;
 
-    delete first_character;
-    delete first_weapon;
+    delete character;
+    delete weapon;
 }

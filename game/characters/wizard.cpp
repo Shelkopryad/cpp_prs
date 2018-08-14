@@ -21,25 +21,25 @@ void Wizard::describe()
 
 void Wizard::calculate()
 {
-    this->health = this->level * (min_value + 23);
-    this->mind = this->level * (min_value + 8);
+    this->health = this->level * (minValue + 23);
+    this->mind = this->level * (minValue + 8);
 }
 
 int Wizard::strike()
 {
     int min = this->mind;
-    int max = this->mind + this->weapon->get_avg();
-    int damage = get_random_number(min, max);
+    int max = this->mind + this->weapon->getAvg();
+    int damage = getRandomNumber(min, max);
     cout << "Wizard damage = " << damage << endl;
     return damage;
 }
 
-int Wizard::get_health()
+int Wizard::getHealth()
 {
     return this->health;
 }
 
-int Wizard::get_mind()
+int Wizard::getMind()
 {
     return this->mind;
 }

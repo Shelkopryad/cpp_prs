@@ -21,24 +21,24 @@ void Rouge::describe()
 
 void Rouge::calculate()
 {
-    this->health = this->level * (min_value + 22);
-    this->agility = this->level * (min_value + 6);
+    this->health = this->level * (minValue + 22);
+    this->agility = this->level * (minValue + 6);
 }
 
 int Rouge::strike()
 {
     int min = this->agility;
-    int max = this->agility + this->weapon->get_avg();
-    int damage = get_random_number(min, max);
+    int max = this->agility + this->weapon->getAvg();
+    int damage = getRandomNumber(min, max);
     cout << "Rouge damage = " << damage << endl;
     return damage;
 }
 
-int Rouge::get_health()
+int Rouge::getHealth()
 {
     return this->health;
 }
-int Rouge::get_agility()
+int Rouge::getAgility()
 {
     return this->agility;
 }

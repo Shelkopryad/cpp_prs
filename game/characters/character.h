@@ -11,11 +11,11 @@ public:
     virtual void describe();
     virtual int strike();
     virtual void calculate();
-    int get_level();
-    int get_health();
-    int get_strength();
-    int get_agility();
-    int get_mind();
+    int getLevel();
+    int getHealth();
+    int getStrength();
+    int getAgility();
+    int getMind();
     void setWeapon(Weapon *wp);
     
 protected:
@@ -25,7 +25,7 @@ protected:
     int agility;
     int mind;
     Weapon *weapon;
-    static const int min_value = 3;
+    static const int minValue = 3;
 };
 
 #endif //CPP_PRS_CHARACTER_H
