@@ -1,0 +1,1 @@
+g++ app.cpp common\common.cpp common\Person.cpp common\Birthday.cpp -o common.exe

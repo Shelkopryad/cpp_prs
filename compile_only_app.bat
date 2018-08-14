@@ -1,0 +1,1 @@
+g++ app.cpp -o test.exe
