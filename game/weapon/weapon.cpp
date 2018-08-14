@@ -10,6 +10,7 @@ Weapon::~Weapon() {}
 void Weapon::describe()
 {
     cout << name << " with dmg [" << minDmg << "-" << maxDmg << "]" << endl;
+    cout << "Average damage: " << getAvg() << endl << endl;;
 }
 
 int Weapon::getAvg()

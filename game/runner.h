@@ -7,13 +7,12 @@
 
 using namespace std;
 
+int setTypeIfUndefined(int type);
 int getCharacterType();
 int getWeaponType();
 Character* createCharacter(int characterType, int level);
 Weapon* createWeapon(int weaponType, int level);
-Weapon* createAxe(vector<string> data, int level);
-Weapon* createDagger(vector<string> data, int level);
-Weapon* createStaff(vector<string> data, int level);
+Weapon* createWeaponSpecificType(vector<string> data, int level);
 void run();
 
 #endif // RUNNER_H

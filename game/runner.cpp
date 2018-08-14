@@ -3,15 +3,24 @@
 #include "characters/warrior.h"
 #include "characters/rouge.h"
 #include "characters/wizard.h"
-#include "weapon/axe.h"
-#include "weapon/dagger.h"
-#include "weapon/staff.h"
 #include "method_helper.h"
 
 using namespace std;
 
+int setTypeIfUndefined(int type)
+{
+    if (type != 1 && type != 2 && type != 3)
+    {
+        cout << "Undefined character or weapon type." << endl;
+        type = getRandomNumber(1, 3);
+    }
+    return type;
+}
+
 Character* createCharacter(int characterType, int level)
 {
+    
+    characterType = setTypeIfUndefined(characterType);
     switch (characterType) {
         case 1:
             return new Warrior(level);
@@ -30,62 +39,33 @@ Character* createCharacter(int characterType, int level)
 
 Weapon* createWeapon(int weaponType, int level)
 {
+    weaponType = setTypeIfUndefined(weaponType);
     vector<string> data;
     switch (weaponType) {
         case 1: {
             data = getData("./game/resources/axes.txt");
-            return createAxe(data, level);
             break;
         }
         case 2: {
             data = getData("./game/resources/daggers.txt");
-            return createDagger(data, level);
             break;
         }
         case 3: {
             data = getData("./game/resources/staff.txt");
-            return createStaff(data, level);
             break;
         }
-        default:
-            return NULL;
     }
+    return createWeaponSpecificType(data, level);
 }
 
-Weapon* createAxe(vector<string> data, int level)
+Weapon* createWeaponSpecificType(vector<string> data, int level)
 {
     for (int i = 0; i < sizeof(data); i++)
     {
-        vector<string> axeData = splitString(data[i], ",");
-        if (stoi(axeData[1]) == level)
+        vector<string> weaponData = splitString(data[i], ",");
+        if (stoi(weaponData[1]) == level)
         {
-            return new Axe(axeData[0], stoi(axeData[2]), stoi(axeData[3]));
-        }
-    }
-    return NULL;
-}
-
-Weapon* createDagger(vector<string> data, int level)
-{
-    for (int i = 0; i < sizeof(data); i++)
-    {
-        vector<string> daggerData = splitString(data[i], ",");
-        if (stoi(daggerData[1]) == level)
-        {
-            return new Dagger(daggerData[0], stoi(daggerData[2]), stoi(daggerData[3]));
-        }
-    }
-    return NULL;
-}
-
-Weapon* createStaff(vector<string> data, int level)
-{
-    for (int i = 0; i < sizeof(data); i++)
-    {
-        vector<string> staffData = splitString(data[i], ",");
-        if (stoi(staffData[1]) == level)
-        {
-            return new Staff(staffData[0], stoi(staffData[2]), stoi(staffData[3]));
+            return new Weapon(weaponData[0], stoi(weaponData[2]), stoi(weaponData[3]));
         }
     }
     return NULL;
@@ -93,7 +73,7 @@ Weapon* createStaff(vector<string> data, int level)
 
 int getCharacterType()
 {
-    cout << "Welcome ot the game!" << endl;
+    cout << "Welcome to the game!" << endl;
     cout << "Select character" << endl;
     cout << "\t1 - Warrior" << endl;
     cout << "\t2 - Rouge" << endl;
