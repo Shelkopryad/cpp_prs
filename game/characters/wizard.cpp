@@ -9,13 +9,9 @@ Wizard::Wizard(int level) : Character(level)
 {
     this->level = level;
     calculate();
-    cout << "Wizard constructor" << endl;
 }
 
-Wizard::~Wizard()
-{
-    cout << "Wizard destructor" << endl;
-}
+Wizard::~Wizard() {}
 
 void Wizard::describe()
 {

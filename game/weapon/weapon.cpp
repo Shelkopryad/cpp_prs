@@ -3,19 +3,13 @@
 
 using namespace std;
 
-Weapon::Weapon(int minDmg, int maxDmg) : minDmg(minDmg), maxDmg(maxDmg)
-{
-    cout << "Weapon constructor" << endl;
-}
+Weapon::Weapon(string name, int minDmg, int maxDmg) : name(name), minDmg(minDmg), maxDmg(maxDmg) {}
 
-Weapon::~Weapon()
-{
-    cout << "Weapon destroyed" << endl;
-}
+Weapon::~Weapon() {}
 
 void Weapon::describe()
 {
-    cout << "Weapon with dmg [" << minDmg << "-" << maxDmg << "]" << endl;
+    cout << "Weapon: " << name << " with dmg [" << minDmg << "-" << maxDmg << "]" << endl;
 }
 
 int Weapon::get_avg()

@@ -9,13 +9,9 @@ Warrior::Warrior(int level) : Character(level)
 {
     this->level = level;
     calculate();
-    cout << "Warrior constructor" << endl;
 }
 
-Warrior::~Warrior()
-{
-    cout << "Warrior destructor" << endl;
-}
+Warrior::~Warrior() {}
 
 void Warrior::describe()
 {

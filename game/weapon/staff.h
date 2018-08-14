@@ -1,16 +1,20 @@
 #ifndef CPP_PRS_STAFF_H
 #define CPP_PRS_STAFF_H
 
+#include <string>
 #include "weapon.h"
+
+using namespace std;
 
 class Staff : public Weapon
 {
 public:
-    Staff(int minDmg, int maxDmg);
+    Staff(string name, int minDmg, int maxDmg);
     ~Staff();
     void describe();
     int get_avg();
 private:
+    string name;
     int minDmg;
     int maxDmg;
 };

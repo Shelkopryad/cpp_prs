@@ -7,7 +7,7 @@
 using namespace std;
 
 int get_random_number(int min, int max);
-vector<string> getData();
+vector<string> getData(const string filePath);
 vector<string> split_string(string data, const char *separator);
 
 

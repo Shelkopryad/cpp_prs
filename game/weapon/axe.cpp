@@ -2,23 +2,18 @@
 #include <string>
 #include "axe.h"
 
-using namespace std;
-
-Axe::Axe(int minDmg, int maxDmg) : Weapon(minDmg, maxDmg)
+Axe::Axe(string name, int minDmg, int maxDmg) : Weapon(name, minDmg, maxDmg)
 {
+    this->name = name;
     this->minDmg = minDmg;
     this->maxDmg = maxDmg;
-    cout << "Axe constructor" << endl;
 }
 
-Axe::~Axe()
-{
-    cout << "Axe destructor" << endl;
-}
+Axe::~Axe() {}
 
 void Axe::describe()
 {
-    cout << "Axe with min damage: " << minDmg << ", max damage: " << maxDmg << endl;
+    cout << this->name << " with min damage: " << this->minDmg << ", max damage: " << this->maxDmg << endl;
     cout << "Average damage: " << get_avg() << endl;
 }
 

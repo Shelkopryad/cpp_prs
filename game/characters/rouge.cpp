@@ -9,13 +9,9 @@ Rouge::Rouge(int level) : Character(level)
 {
     this->level = level;
     calculate();
-    cout << "Rouge constructor" << endl;
 }
 
-Rouge::~Rouge()
-{
-    cout << "Rouge destructor" << endl;
-}
+Rouge::~Rouge() {}
 
 void Rouge::describe()
 {

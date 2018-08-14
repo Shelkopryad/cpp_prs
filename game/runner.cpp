@@ -6,14 +6,12 @@
 #include "weapon/axe.h"
 #include "weapon/dagger.h"
 #include "weapon/staff.h"
+#include "method_helper.h"
 
 using namespace std;
 
-Character* create_character(int character_type)
+Character* create_character(int character_type, int level)
 {
-    int level;
-    cout << "Which level?" << endl;
-    cin >> level;
     switch (character_type) {
         case 1:
             return new Warrior(level);
@@ -30,26 +28,67 @@ Character* create_character(int character_type)
     }
 }
 
-Weapon* create_weapon(int weapon_type)
+Weapon* create_weapon(int weapon_type, int level)
 {
-    int min = 123;
-    int max = 159;
+    vector<string> data;
     switch (weapon_type) {
         case 1: {
-            return new Axe(min, max);
+            data = getData("./game/resources/axes.txt");
+            return create_axe(data, level);
             break;
         }
         case 2: {
-            return new Dagger(min, max);
+            data = getData("./game/resources/daggers.txt");
+            return create_dagger(data, level);
             break;
         }
         case 3: {
-            return new Staff(min, max);
+            data = getData("./game/resources/staff.txt");
+            return create_staff(data, level);
             break;
         }
         default:
             return NULL;
     }
+}
+
+Weapon* create_axe(vector<string> data, int level)
+{
+    for (int i = 0; i < sizeof(data); i++)
+    {
+        vector<string> axe_data = split_string(data[i], ",");
+        if (stoi(axe_data[1]) == level)
+        {
+            return new Axe(axe_data[0], stoi(axe_data[2]), stoi(axe_data[3]));
+        }
+    }
+    return NULL;
+}
+
+Weapon* create_dagger(vector<string> data, int level)
+{
+    for (int i = 0; i < sizeof(data); i++)
+    {
+        vector<string> dagger_data = split_string(data[i], ",");
+        if (stoi(dagger_data[1]) == level)
+        {
+            return new Dagger(dagger_data[0], stoi(dagger_data[2]), stoi(dagger_data[3]));
+        }
+    }
+    return NULL;
+}
+
+Weapon* create_staff(vector<string> data, int level)
+{
+    for (int i = 0; i < sizeof(data); i++)
+    {
+        vector<string> staff_data = split_string(data[i], ",");
+        if (stoi(staff_data[1]) == level)
+        {
+            return new Staff(staff_data[0], stoi(staff_data[2]), stoi(staff_data[3]));
+        }
+    }
+    return NULL;
 }
 
 int get_character_type()
@@ -77,13 +116,16 @@ int get_weapon_type()
 
 void run()
 {
-    
     int first_character_type = get_character_type();
-    Character *first_character = create_character(first_character_type);
+    int level;
+    cout << "Which level?" << endl;
+    cin >> level;
+    cout << endl;
+    Character *first_character = create_character(first_character_type, level);
     first_character->describe();
 
     int first_weapon_type = get_weapon_type();
-    Weapon *first_weapon = create_weapon(first_weapon_type);
+    Weapon *first_weapon = create_weapon(first_weapon_type, level);
     first_character->setWeapon(first_weapon);
     first_character->strike();
     cout << endl;

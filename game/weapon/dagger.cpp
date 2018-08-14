@@ -1,23 +1,21 @@
 #include <iostream>
+#include <string>
 #include "dagger.h"
 
 using namespace std;
 
-Dagger::Dagger(int minDmg, int maxDmg) : Weapon(minDmg, maxDmg)
+Dagger::Dagger(string name, int minDmg, int maxDmg) : Weapon(name, minDmg, maxDmg)
 {
+    this->name = name;
     this->minDmg = minDmg;
     this->maxDmg = maxDmg;
-    cout << "Dagger constructor" << endl;
 }
 
-Dagger::~Dagger()
-{
-    cout << "Dagger destructor" << endl;
-}
+Dagger::~Dagger() {}
 
 void Dagger::describe()
 {
-    cout << "Dagger with min damage: " << minDmg << ", max damage: " << maxDmg << endl;
+    cout << this->name << " with min damage: " << this->minDmg << ", max damage: " << this->maxDmg << endl;
     cout << "Average damage: " << get_avg() << endl;
 }
 

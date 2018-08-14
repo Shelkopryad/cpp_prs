@@ -10,23 +10,21 @@
 
 int get_random_number(int min, int max)
 {
-    srand( time( 0 ) );
+    srand(time(0));
     return min + rand() % (max-min+1);
 }
 
-vector<string> getData()
+vector<string> getData(const string filePath)
 {
     string buff;
     vector<string> data;
     int index;
     ifstream fin;
-    fin.open("./game/resources/tmp.txt");
+    fin.open(filePath);
     
     while(!fin.eof())
     {
         getline(fin, buff);
-        // fin >> buff;
-        cout << buff << endl;
 
         for (int i = 1; i < buff.length(); i++)
         {

@@ -8,13 +8,9 @@ Character::Character(int level)
 {
     this->level = level;
     calculate();
-    cout << "Character constructor" << endl;
 }
 
-Character::~Character()
-{
-    cout << "Character destructor" << endl;
-}
+Character::~Character() {}
 
 void Character::calculate()
 {
