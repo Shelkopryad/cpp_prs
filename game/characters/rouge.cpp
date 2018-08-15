@@ -27,9 +27,27 @@ void Rouge::calculate()
 
 int Rouge::strike()
 {
-    int min = this->agility;
-    int max = this->agility + this->weapon->getAvg();
-    int damage = getRandomNumber(min, max);
+    int weaponMainStat = this->weapon->getMainStat();
+    int min, max, damage;
+
+    switch(weaponMainStat)
+    {
+        case 1:
+            cout << warriorWeapon << badChoice << endl;
+            min = this->strength;
+            max = this->strength + this->weapon->getMin();
+            break;
+        case 2:
+            min = this->agility;
+            max = this->agility + this->weapon->getAvg();
+            break;
+        case 3:
+            cout << wizardWeapon << badChoice << endl;
+            min = this->mind;
+            max = this->mind + this->weapon->getMin();
+            break;
+    }
+    damage = getRandomNumber(min, max);
     cout << "Rouge damage = " << damage << endl;
     return damage;
 }

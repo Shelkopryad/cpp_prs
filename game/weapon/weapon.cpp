@@ -13,6 +13,21 @@ void Weapon::describe()
     cout << "Average damage: " << getAvg() << endl << endl;;
 }
 
+void Weapon::setMainStat(int value)
+{
+    this->mainStat = value;
+}
+
+int Weapon::getMainStat()
+{
+    return this->mainStat;
+}
+
+int Weapon::getMin()
+{
+    return this->minDmg;
+}
+
 int Weapon::getAvg()
 {
     return (minDmg + maxDmg) / 2;

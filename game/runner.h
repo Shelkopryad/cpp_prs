@@ -7,7 +7,6 @@
 
 using namespace std;
 
-int setTypeIfUndefined(int type);
 int getCharacterType();
 int getWeaponType();
 Character* createCharacter(int characterType, int level);

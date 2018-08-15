@@ -1,7 +1,11 @@
 #ifndef CPP_PRS_CHARACTER_H
 #define CPP_PRS_CHARACTER_H
 
+#include <string>
+
 #include "../weapon/weapon.h"
+
+using namespace std;
 
 class Character
 {
@@ -26,6 +30,10 @@ protected:
     int mind;
     Weapon *weapon;
     static const int minValue = 3;
+    static constexpr const char* badChoice = "Damage will be decreased!";
+    static constexpr const char* warriorWeapon = "This is weapon for Warrior!\n";
+    static constexpr const char* rougeWeapon = "This is weapon for Rouge!\n";
+    static constexpr const char* wizardWeapon = "This is weapon for Wizard!\n";
 };
 
 #endif //CPP_PRS_CHARACTER_H

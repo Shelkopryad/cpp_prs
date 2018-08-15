@@ -27,9 +27,27 @@ void Warrior::calculate()
 
 int Warrior::strike()
 {
-    int min = this->strength;
-    int max = this->strength + this->weapon->getAvg();
-    int damage = getRandomNumber(min, max);
+    int weaponMainStat = this->weapon->getMainStat();
+    int min, max, damage;
+
+    switch(weaponMainStat)
+    {
+        case 1:
+            min = this->strength;
+            max = this->strength + this->weapon->getAvg();
+            break;
+        case 2:
+            cout << rougeWeapon << badChoice << endl;
+            min = this->agility;
+            max = this->agility + this->weapon->getMin();
+            break;
+        case 3:
+            cout << wizardWeapon << badChoice << endl;
+            min = this->mind;
+            max = this->mind + this->weapon->getMin();
+            break;
+    }
+    damage = getRandomNumber(min, max);
     cout << "Warrior damage = " << damage << endl;
     return damage;
 }

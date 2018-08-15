@@ -11,9 +11,13 @@ public:
     Weapon(string name, int minDmg, int maxDmg);
     virtual ~Weapon();
     virtual void describe();
+    virtual int getMin();
     virtual int getAvg();
+    virtual void setMainStat(int value);
+    virtual int getMainStat();
 private:
     string name;
+    int mainStat;
     int minDmg;
     int maxDmg;
 };

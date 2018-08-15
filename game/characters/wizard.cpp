@@ -27,10 +27,28 @@ void Wizard::calculate()
 
 int Wizard::strike()
 {
-    int min = this->mind;
-    int max = this->mind + this->weapon->getAvg();
-    int damage = getRandomNumber(min, max);
-    cout << "Wizard damage = " << damage << endl;
+    int weaponMainStat = this->weapon->getMainStat();
+    int min, max, damage;
+
+    switch(weaponMainStat)
+    {
+        case 1:
+            cout << warriorWeapon << badChoice << endl;
+            min = this->strength;
+            max = this->strength + this->weapon->getMin();
+            break;
+        case 2:
+            cout << rougeWeapon << badChoice << endl;
+            min = this->agility;
+            max = this->agility + this->weapon->getMin();
+            break;
+        case 3:
+            min = this->mind;
+            max = this->mind + this->weapon->getAvg();
+            break;
+    }
+    damage = getRandomNumber(min, max);
+    cout << "Rouge damage = " << damage << endl;
     return damage;
 }
 
