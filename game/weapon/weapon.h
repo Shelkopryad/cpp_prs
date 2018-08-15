@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include "..\method_helper.h"
+
 using namespace std;
 
 class Weapon
@@ -12,7 +14,7 @@ public:
     virtual ~Weapon();
     virtual void describe();
     virtual int getMin();
-    virtual int getAvg();
+    virtual int getRandDmg();
     virtual void setMainStat(int value);
     virtual int getMainStat();
 private:

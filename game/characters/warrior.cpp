@@ -34,7 +34,7 @@ int Warrior::strike()
     {
         case 1:
             min = this->strength;
-            max = this->strength + this->weapon->getAvg();
+            max = this->strength + this->weapon->getRandDmg();
             break;
         case 2:
             cout << rougeWeapon << badChoice << endl;

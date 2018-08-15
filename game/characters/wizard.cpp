@@ -44,7 +44,7 @@ int Wizard::strike()
             break;
         case 3:
             min = this->mind;
-            max = this->mind + this->weapon->getAvg();
+            max = this->mind + this->weapon->getRandDmg();
             break;
     }
     damage = getRandomNumber(min, max);

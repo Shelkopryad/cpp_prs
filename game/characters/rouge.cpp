@@ -39,7 +39,7 @@ int Rouge::strike()
             break;
         case 2:
             min = this->agility;
-            max = this->agility + this->weapon->getAvg();
+            max = this->agility + this->weapon->getRandDmg();
             break;
         case 3:
             cout << wizardWeapon << badChoice << endl;

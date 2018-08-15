@@ -1,4 +1,0 @@
-[Mike Qwe,15,5,123]
-[Denis Asd,26,4,234]
-[Izabella ZXc,18,8,5]
-[Johanna Sdf,48,2,567]

@@ -10,7 +10,7 @@ Weapon::~Weapon() {}
 void Weapon::describe()
 {
     cout << name << " with dmg [" << minDmg << "-" << maxDmg << "]" << endl;
-    cout << "Average damage: " << getAvg() << endl << endl;;
+    cout << "Damage: " << getRandDmg() << endl << endl;;
 }
 
 void Weapon::setMainStat(int value)
@@ -28,7 +28,7 @@ int Weapon::getMin()
     return this->minDmg;
 }
 
-int Weapon::getAvg()
+int Weapon::getRandDmg()
 {
-    return (minDmg + maxDmg) / 2;
+    return getRandomNumber(minDmg, maxDmg);
 }
