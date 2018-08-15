@@ -48,7 +48,7 @@ int Wizard::strike()
             break;
     }
     damage = getRandomNumber(min, max);
-    cout << "Rouge damage = " << damage << endl;
+    cout << "Wizard damage = " << damage << endl;
     return damage;
 }
 

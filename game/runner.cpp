@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Character* createCharacter(int characterType, int level)
+Character* createCharacter(int &characterType, int &level)
 {
     if (characterType < 1 || characterType > 3)
     {
@@ -30,7 +30,7 @@ Character* createCharacter(int characterType, int level)
     }
 }
 
-Weapon* createWeapon(int weaponType, int level)
+Weapon* createWeapon(int &weaponType, int &level)
 {
     if (weaponType < 1 || weaponType > 6)
     {
@@ -67,7 +67,7 @@ Weapon* createWeapon(int weaponType, int level)
     return createWeaponSpecificType(data, level);
 }
 
-Weapon* createWeaponSpecificType(vector<string> data, int level)
+Weapon* createWeaponSpecificType(vector<string> data, int &level)
 {
     Weapon *weapon;
     for (int i = 0; i < sizeof(data); i++)
@@ -111,31 +111,42 @@ int getWeaponType()
 
 void run()
 {
-    int characterType = getCharacterType();
+    // int characterType = getCharacterType();
     int level;
     cout << "Which level?" << endl;
-    cin >> level;
-    cout << endl;
-    Character *character = createCharacter(characterType, level);
-    character->describe();
+    // cin >> level;
+    // cout << endl;
+    // Character *character = createCharacter(characterType, level);
+    // character->describe();
 
-    int weaponType = getWeaponType();
-    Weapon *weapon = createWeapon(weaponType, level);
-    character->setWeapon(weapon);
-    character->strike();
-    cout << endl;
-    // int level = getRandomNumber(1, 10);
-    // cout << "level = " << level << endl;
-    // getRandomNumber(0, 1000);
-    // Character *enemy = createCharacter(getRandomNumber(1, 3), level);
-    // enemy->describe();
-    // getRandomNumber(0, 1000);
-    // Weapon *weapon = createWeapon(getRandomNumber(1, 3), level);
-    // enemy->setWeapon(weapon);
-    // enemy->strike();
+    // int weaponType = getWeaponType();
+    // Weapon *weapon = createWeapon(weaponType, level);
+    // character->setWeapon(weapon);
+    // character->strike();
 
-    delete character;
-    delete weapon;
-    // delete enemy;
+    Character *enemy;
+    Weapon *e_weapon;
+    while(true)
+    {
+            cout << "===================================================" << endl;
+            cout << "Enemy!" << endl;
+            level = getRandomNumber(1, 10);
+            getRandomNumber(0, 1000);
+            int characterType = getRandomNumber(1, 3);
+            enemy = createCharacter(characterType, level);
+            enemy->describe();
+            getRandomNumber(0, 1000);
+            int weaponType = getRandomNumber(1, 6);
+            e_weapon = createWeapon(weaponType, level);
+            enemy->setWeapon(e_weapon);
+            enemy->strike();
+            cout << "===================================================" << endl;
+            system("pause");
+    }
+
+
+    // delete character;
     // delete weapon;
+    delete enemy;
+    delete e_weapon;
 }
