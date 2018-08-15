@@ -111,42 +111,18 @@ int getWeaponType()
 
 void run()
 {
-    // int characterType = getCharacterType();
+    int characterType = getCharacterType();
     int level;
     cout << "Which level?" << endl;
-    // cin >> level;
-    // cout << endl;
-    // Character *character = createCharacter(characterType, level);
-    // character->describe();
+    cin >> level;
+    cout << endl;
+    Character *character = createCharacter(characterType, level);
+    character->describe();
 
-    // int weaponType = getWeaponType();
-    // Weapon *weapon = createWeapon(weaponType, level);
-    // character->setWeapon(weapon);
-    // character->strike();
-
-    Character *enemy;
-    Weapon *e_weapon;
-    while(true)
-    {
-            cout << "===================================================" << endl;
-            cout << "Enemy!" << endl;
-            level = getRandomNumber(1, 10);
-            getRandomNumber(0, 1000);
-            int characterType = getRandomNumber(1, 3);
-            enemy = createCharacter(characterType, level);
-            enemy->describe();
-            getRandomNumber(0, 1000);
-            int weaponType = getRandomNumber(1, 6);
-            e_weapon = createWeapon(weaponType, level);
-            enemy->setWeapon(e_weapon);
-            enemy->strike();
-            cout << "===================================================" << endl;
-            system("pause");
-    }
-
-
-    // delete character;
-    // delete weapon;
-    delete enemy;
-    delete e_weapon;
+    int weaponType = getWeaponType();
+    Weapon *weapon = createWeapon(weaponType, level);
+    character->setWeapon(weapon);
+    character->strike();
+    delete character;
+    delete weapon;
 }
